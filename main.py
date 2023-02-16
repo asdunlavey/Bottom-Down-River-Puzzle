@@ -32,10 +32,14 @@ def main():
 
 
 def display_positions(lake_pos):
-    print(f'Farmer:{lake_pos["Farmer"]}')
-    print(f'Wolf:{lake_pos["Wolf"]}')
-    print(f'Goat:{lake_pos["Goat"]}')
-    print(f'Cabbage:{lake_pos["Cabbage"]}')
+    print(f'Farmer:{left_or_right(lake_pos["Farmer"])}')
+    print(f'Wolf:{left_or_right(lake_pos["Wolf"])}')
+    print(f'Goat:{left_or_right(lake_pos["Goat"])}')
+    print(f'Cabbage:{left_or_right(lake_pos["Cabbage"])}')
+
+
+def left_or_right(item) -> str:
+    return 'Right' if item else 'Left'
 
 
 def can_transport_wolf_successfully(lake_pos):

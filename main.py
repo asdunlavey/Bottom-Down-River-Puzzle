@@ -4,11 +4,7 @@ from searches import Searches
 
 def select_object() -> object:
     """Determines what object to create, based on the user's choice."""
-    puzzles: dict[str, object] = {
-        'Manual':ManualControl(),
-        'Searches':Searches()
-    }
-
+    puzzles: dict[str, object] = {'Manual':ManualControl(),'Searches':Searches()}
     print(options := tuple(puzzles.keys()))
     choice: str = ''
     while choice not in options:
@@ -17,5 +13,4 @@ def select_object() -> object:
 
 
 if __name__ == '__main__':
-    puzzle: object = select_object()
-    puzzle.start_puzzle()
+    select_object().start_puzzle()
